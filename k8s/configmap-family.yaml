@@ -1,0 +1,6 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-family
+data:
+  members: "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos"
