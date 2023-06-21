@@ -36,7 +36,7 @@ func ConfigMap(w http.ResponseWriter, r *http.Request) {
 func Hello(w http.ResponseWriter, r *http.Request) {
 	name := os.Getenv("NAME")
 	age := os.Getenv("AGE")
-	fmt.Fprintf(w, "Hello v7.3, I'm %s. I'm %s.", name, age)
+	fmt.Fprintf(w, "Hello v7.4, I'm %s. I'm %s.", name, age)
 }
 
 func Healthz(w http.ResponseWriter, r *http.Request) {
@@ -44,7 +44,7 @@ func Healthz(w http.ResponseWriter, r *http.Request) {
 	duration := time.Since(startedAt)
 	fmt.Sprintf("Seconds: %v :", duration.Seconds())
 
-	if duration.Seconds() < 14 {
+	if duration.Seconds() > 20 {
 		w.WriteHeader(500)
 		w.Write([]byte(fmt.Sprintf("Duration: %v", duration.Seconds())))
 	} else {
