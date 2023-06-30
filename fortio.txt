@@ -1,0 +1,1 @@
+kubectl run -it fortio --rm --image=fortio/fortio -- load -qps 1200 -t 150s -c 70 "http://goserver-service:90/healthz"
